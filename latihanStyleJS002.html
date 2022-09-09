@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MINGGU 3 | Belajar JS</title>
+</head>
+<body onload= "jalankan();">
+    <div id="layar">
+        <div class="panel"></div>
+        <div class="panel"></div>
+        <div class="panel"></div>
+        <div class="panel"></div>
+        <div class="panel"></div>
+    </div>
+</body>
+<script>
+
+    function lakukan()
+    {
+        // tempat = document.getElementById("layar"); Mengambil document element dari ID layar
+        tempat = document.getElementsByClassName("panel");
+        jumlah = tempat.length;
+
+        for (i = 0; i < jumlah; i++)
+        {
+            tempat[i].innerHTML = '<h1>' + i +'</h1>'; // Cetak Array dari "panel"
+            tempat[i].style.fontFamily = 'sans-serif'; // Mengubah font family lewat javascript
+        }
+
+        pilih = document.querySelectorAll('div.panel:nth-child(odd)'); // Pilih H1 yang merupakan anak dari class 'panel' dan yang ganjil saja
+        jumlah = pilih.length;
+        for (i = 0; i < jumlah; i++)
+        {
+            pilih[i].style.color = 'white'
+            pilih[i].style.backgroundColor = 'black'; // Mengubah font family lewat javascript
+        }
+    }
+//------------------------------------
+    function jalankan()
+    {
+        lakukan();
+    }
+</script>
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MINGGU 3 | Belajar JS</title>
+</head>
+<body onload= "jalankan();">
+    
+</body>
+<script>
+
+    txt = 'Nulla dapibus vel mi in sagittis. Fusce efficitur, augue eget tincidunt bibendum, dui ante finibus elit, vitae convallis justo mi ac tortor. Integer porttitor eget lorem non ullamcorper. Aenean porttitor, eros a vehicula feugiat, nulla justo pellentesque nulla, eu semper felis nulla eget nisi. Fusce vitae ante id dui eleifend egestas. In quis orci auctor, tincidunt sapien sit amet, convallis mauris. Nunc lobortis vitae enim at euismod. Pellentesque tristique velit sodales mollis placerat. Duis velit mi, consequat at nulla vitae, hendrerit elementum dui. Nulla aliquam tellus a turpis blandit faucibus. Morbi a tellus non lorem ornare efficitur. Donec non scelerisque erat. Quisque at malesuada elit, ac luctus leo. Aenean accumsan nisl vel arcu ultrices porta. Nullasm sodales mattis convallis. Pellentesque vitae aliquam dui, ut aliquam nisl.';
+
+    var catatan;
+
+    function hapus(e)
+    {
+        e.target.remove();
+    }
+
+    function klik(e)
+    {
+        // ee = e;
+        // alert(e.target.innerHTML);
+        kopi = document.createElement('span');
+        kopi.innerHTML = e.target.innerHTML + '. ';
+        kopi.style.backgroundColor = e.target.style.backgroundColor;
+        kopi.addEventListener('click', hapus);
+        catatan.appendChild(kopi);
+    }
+
+    function lakukan()
+    {
+        bodi = document.getElementsByTagName('body')[0];
+
+        txt = txt.split('. ');
+        jumlah = txt.length;
+
+        for (i = 0; i < jumlah; i++)
+        {
+            tempat = document.createElement('div');
+            tempat.innerHTML = txt[i];
+            r1 = Math.floor(Math.random() * 16); // Random 0 - 15
+            r1 = r1.toString(16) // Konversi number to string base-16
+            tempat.style.backgroundColor = '#'+'FF'+r1+r1+r1+r1;
+            tempat.addEventListener('click', klik);
+            bodi.appendChild(tempat);
+        }
+
+        catatan = document.createElement('div');
+        catatan.style.marginTop = '150px';
+        catatan.style.border = '1px solid black';
+        catatan.style.minHeight = '100px';
+        bodi.appendChild(catatan);
+        
+    }
+//------------------------------------
+    function jalankan()
+    {
+        lakukan();
+    }
+</script>
+</html>

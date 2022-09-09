@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MINGGU 3 | Belajar JS</title>
+</head>
+<body onload= "jalankan();">
+    
+</body>
+<script>
+
+    function lakukan()
+    {
+        jumlah = 10;
+        bodi = document.getElementsByTagName('body');
+        bodi = bodi[0];
+        for (i = 0; i < jumlah; i++)
+        {
+            tempat = document.createElement('div'); // create DIV di javascript
+            tulisanBesar = document.createElement('h3'); // create H3
+            tulisanBesar.innerHTML = i; // Isikan tulisan ke h1
+            tempat.appendChild(tulisanBesar); // Masukkin h1 ke div
+            bodi.appendChild(tempat); // Masukkin div ke body
+        }
+    }
+//------------------------------------
+    function jalankan()
+    {
+        lakukan();
+    }
+</script>
+</html>

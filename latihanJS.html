@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MINGGU 3 | Belajar JS</title>
+</head>
+<body onload= "jalankan();">
+    <div id="layar">
+
+    </div>
+</body>
+<script>
+
+    function lakukan()
+    {
+        tempat = document.getElementById("layar"); // Mengambil document element dari ID layar
+        // tempat.innerHTML = 'woywoywoy' // Melakukan print ke layar
+        for(i = 0; i < 10; i++)
+        {
+            tempat.innerHTML += i+'<br>';
+        }
+    }
+//------------------------------------
+    function jalankan()
+    {
+        lakukan();
+    }
+</script>
+</html>
