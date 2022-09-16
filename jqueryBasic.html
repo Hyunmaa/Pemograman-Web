@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MINGGU 4 | BASIC JQUERY </title>
+    <style>
+        @font-face {
+            font-family: narasi;
+            src: url("/huruf/Roboto-Medium.ttf");
+        }
+
+        * {
+            font-family: narasi;
+        }
+
+        .kotak {
+            width: 200px;
+            height: 100px;
+        }
+
+        .ijo {
+            background-color: lightseagreen;
+        }
+
+        .merah {
+            background-color: salmon;
+        }
+
+        .biru {
+            background-color: turquoise;
+        }
+
+        nav ul {
+            list-style: none;
+            margin: 0px;
+            padding: 0px;
+        }
+
+        nav li {
+            background-color: lightseagreen;
+            width: 100px;
+            height: 40px;
+            line-height: 40px;
+            float: left;
+            text-align: center;
+            position: relative;
+            border: 1px solid white;
+        }
+
+        nav ul.sub {
+            padding: 0px;
+        }
+
+        nav ul.sub ul {
+            padding-left: 100px;
+            top: 0px;
+            position: absolute;
+        }
+
+        nav li li {
+            background-color: paleturquoise;
+        }
+
+        nav li li li {
+            background-color: aquamarine;
+        }
+
+        .sub {
+            display: none;
+        }
+    </style>
+
+</head>
+<body>
+    <nav>
+        <ul>
+            <li>A</li>
+            <li>B
+                <ul class="sub">
+                    <li>BA</li>
+                    <li>BB
+                        <ul class="sub">
+                            <li>BBA</li>
+                            <li>BBB</li>
+                            <li>BBC</li>
+                            <li>BBD</li>
+                        </ul>
+                    </li>
+                    <li>BC</li>
+                </ul>
+            </li>
+            <li>C</li>
+            <li>D</li>
+        </ul>
+    </nav>
+</body>
+<script src="jquery-3.6.1.min.js"></script>
+<script>
+    function jalankan()
+    {
+
+        // Pilih li yang punya sub menu
+        // Lalu tambahan fade in fade out lewat hover
+        // $(this) dalam konteks ini adalah li yang sedang di hover
+        // find() untuk cari semua anak, yaitu anak li yang berupa anak langsung (>)
+        // yang ul agar seluruh li menu selanjutnya bisa fade in fade out
+        $('li').hover(
+                    function() {
+                        $(this).find('>ul.sub').fadeIn();
+                    },
+                    function() {
+                        $(this).find('>ul.sub').fadeOut();
+                    }
+        );
+    }
+</script>
+<script>
+    $(document).ready(function() {
+        jalankan();
+        });
+</script>
+</html>
