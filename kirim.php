@@ -16,8 +16,7 @@
         echo "<br>\n\n";
     }
     ?>
-        <br>
-        <input type="submit" value="KIRIM">
+        <input type="submit" value="Kirim">
     </form>
 </body>
 </html>
